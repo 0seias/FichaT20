@@ -11,7 +11,7 @@ import android.widget.TextView;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-    Button Salvar, Deletar, Atualizar;
+    Button Salvar, Deletar, Atualizar, Refresh, Preencher;
     TextView mostraGrupo, NomeL, ClasseL, RacaL, NivelL, DefesaL, PML, PVL;
     EditText Nome, Classe, Raca, Nivel, Defesa, PM, PV, ID;
     String text = "", text2 = "", nome1, classe1, raca1, nivel1, defesa1, pv1, pm1, id1;
@@ -25,10 +25,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Nome = findViewById(R.id.Nome);
         NomeL = findViewById(R.id.NomeL);
-        Classe = findViewById(R.id.Classe);
-        ClasseL = findViewById(R.id.ClasseL);
-        Raca = findViewById(R.id.Raca);
-        RacaL = findViewById(R.id.RacaL);
+        Classe = findViewById(R.id.Raca);
+        ClasseL = findViewById(R.id.RacaL);
+        Raca = findViewById(R.id.Classe);
+        RacaL = findViewById(R.id.ClasseL);
         Nivel = findViewById(R.id.Nivel);
         NivelL = findViewById(R.id.NivelL);
         Defesa = findViewById(R.id.Defesa);
@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
         defesa1 = Defesa.getText().toString();
         pv1 = PV.getText().toString();
         pm1 = PM.getText().toString();
-        banco.insereDadosFichas(new DadosFicha(nome1, classe1, raca1, nivel1, defesa1, pv1, pm1));
+        banco.insereDadosFichas(new DadosFicha(nome1, raca1, classe1, nivel1, defesa1, pv1, pm1));
         Atualizar();
     }
 
@@ -72,7 +72,21 @@ public class MainActivity extends AppCompatActivity {
         defesa1 = Defesa.getText().toString();
         pv1 = PV.getText().toString();
         pm1 = PM.getText().toString();
-        banco.atualizaDadosFicha(new DadosFicha(id1, nome1, classe1, raca1, nivel1, defesa1, pv1, pm1 ));
+        banco.atualizaDadosFicha(new DadosFicha(id1, nome1, raca1, classe1, nivel1, defesa1, pv1, pm1 ));
+        Atualizar();
+
+    }
+
+    public void Preencher(View view){
+        int id1 = Integer.parseInt(ID.getText().toString());
+        DadosFicha df= banco.consultaDadosFicha(id1);
+        Nome.setText(df.getNome());
+        Raca.setText(df.getRaca());
+        Classe.setText(df.getClasse());
+        Nivel.setText(df.getNivel());
+        Defesa.setText(df.getDefesa());
+        PV.setText(df.getPV());
+        PM.setText(df.getPM());
         Atualizar();
 
     }
@@ -81,12 +95,17 @@ public class MainActivity extends AppCompatActivity {
         List<DadosFicha> dadosFichas = banco.listaTodosDadosFicha();
         for (DadosFicha c : dadosFichas )
         {
-            String log = "ID "+c.getId() + ": " + c.getNome() + ", " + c.getRaca() + ", "+ c.getClasse() + " "+ c.getNivel() + " (PV: "+ c.getPV() + ", PM: "+ c.getPM() + ", DEF: "+ c.getDefesa() +") ;" +"\n";
+            String log = "ID "+c.getId() + ": " + c.getNome() + ", " + c.getRaca() + ", "+ c.getClasse() + " "+ c.getNivel() + " (DEF: "+ c.getDefesa() +", PV: "+ c.getPV() + ", PM: "+ c.getPM() + ");" +"\n";
             text = text + log;
         }
         mostraGrupo.setText(text);
         text = "";
     }
 
+    public void Refresh(View view){
+
+        Atualizar();
+
+    }
 
 }

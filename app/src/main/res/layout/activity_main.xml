@@ -16,10 +16,10 @@
         android:textSize="10sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.163"
+        app:layout_constraintHorizontal_bias="0.215"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.625" />
+        app:layout_constraintVertical_bias="0.604" />
 
     <Button
         android:id="@+id/Deletar"
@@ -34,6 +34,34 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.602" />
+
+    <Button
+        android:id="@+id/Preencher"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:onClick="Preencher"
+        android:textSize="10sp"
+        app:icon="@android:drawable/stat_sys_upload"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.935"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.698" />
+
+    <Button
+        android:id="@+id/Refresh"
+        android:layout_width="51dp"
+        android:layout_height="44dp"
+        android:onClick="Refresh"
+        android:textSize="10sp"
+        app:icon="@android:drawable/ic_popup_sync"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.044"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.703" />
 
     <Button
         android:id="@+id/Editar"
@@ -80,10 +108,10 @@
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.181"
+        app:layout_constraintHorizontal_bias="0.262"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.711" />
+        app:layout_constraintVertical_bias="0.703" />
 
     <TextView
         android:id="@+id/DefesaL"
@@ -109,17 +137,17 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/RacaL"
+        android:id="@+id/ClasseL"
         android:layout_width="59dp"
         android:layout_height="24dp"
         android:layout_marginTop="44dp"
         android:layout_marginEnd="8dp"
-        android:text="Raça"
+        android:text="Classe"
         android:textAlignment="center"
-        app:layout_constraintEnd_toStartOf="@+id/Raca"
+        app:layout_constraintEnd_toStartOf="@+id/Classe"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ClasseL" />
+        app:layout_constraintTop_toBottomOf="@+id/RacaL" />
 
     <TextView
         android:id="@+id/NivelL"
@@ -134,13 +162,13 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/ClasseL"
+        android:id="@+id/RacaL"
         android:layout_width="56dp"
         android:layout_height="27dp"
         android:layout_marginTop="52dp"
-        android:text="Classe"
+        android:text="Raça"
         android:textAlignment="center"
-        app:layout_constraintEnd_toStartOf="@+id/Classe"
+        app:layout_constraintEnd_toStartOf="@+id/Raca"
         app:layout_constraintHorizontal_bias="0.82"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/NomeL" />
@@ -159,7 +187,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/Classe"
+        android:id="@+id/Raca"
         android:layout_width="285dp"
         android:layout_height="52dp"
         android:layout_marginTop="16dp"
@@ -173,7 +201,7 @@
         tools:ignore="SpeakableTextPresentCheck" />
 
     <EditText
-        android:id="@+id/Raca"
+        android:id="@+id/Classe"
         android:layout_width="285dp"
         android:layout_height="52dp"
         android:layout_marginTop="20dp"
@@ -183,7 +211,7 @@
         android:selectAllOnFocus="false"
         android:singleLine="false"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Classe" />
+        app:layout_constraintTop_toBottomOf="@+id/Raca" />
 
     <EditText
         android:id="@+id/Defesa"
@@ -202,8 +230,8 @@
         android:id="@+id/ID"
         android:layout_width="40dp"
         android:layout_height="49dp"
-        android:layout_marginTop="440dp"
-        android:layout_marginEnd="24dp"
+        android:layout_marginTop="424dp"
+        android:layout_marginEnd="20dp"
         android:ems="10"
         android:hint="ID"
         android:inputType="number"

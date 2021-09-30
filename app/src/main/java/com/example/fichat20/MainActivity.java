@@ -12,7 +12,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     Button Salvar, Deletar, Atualizar, Refresh, Preencher;
-    TextView mostraGrupo, NomeL, ClasseL, RacaL, NivelL, DefesaL, PML, PVL;
+    TextView mostraGrupo, NomeL, ClasseL, RacaL, NivelL, DefesaL, PML, PVL, GrupoL;
     EditText Nome, Classe, Raca, Nivel, Defesa, PM, PV, ID;
     String text = "", text2 = "", nome1, classe1, raca1, nivel1, defesa1, pv1, pm1, id1;
     BancoDeDados banco = new BancoDeDados(this);
@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
         PM = findViewById(R.id.PM);
         PML = findViewById(R.id.PML);
         ID = findViewById(R.id.ID);
+        GrupoL =  findViewById(R.id.GrupoL);
         mostraGrupo = (TextView) findViewById(R.id.mostraGrupo);
 
     }
@@ -100,12 +101,16 @@ public class MainActivity extends AppCompatActivity {
         }
         mostraGrupo.setText(text);
         text = "";
+        int i = banco.consultaQuantidadeFichas();
+        String cont = String.valueOf(i);
+        String cont2 = "Grupo " + cont;
+        GrupoL.setText(cont2);
+        cont2 = "";
     }
 
     public void Refresh(View view){
 
         Atualizar();
-
     }
 
 }

@@ -143,12 +143,12 @@ public class BancoDeDados extends SQLiteOpenHelper
 
         banco.close();
     }
+
     public int consultaQuantidadeFichas()
     {
         String countQuery = "SELECT * FROM " + TABELA_FICHAS;
         SQLiteDatabase banco = this.getReadableDatabase();
         Cursor cursor = banco.rawQuery(countQuery, null);
-        cursor.close();
         return cursor.getCount();
     }
 

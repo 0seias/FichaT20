@@ -132,6 +132,8 @@ public class BancoDeDados extends SQLiteOpenHelper
         return banco.update(TABELA_FICHAS, values, CAMPO_ID + "=?", new String[]
                 {String.valueOf(dadosFicha.getId())});
     }
+
+
     public void deletaDadosFicha(DadosFicha dadosFicha)
     {
 

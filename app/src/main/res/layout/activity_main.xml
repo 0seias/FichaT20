@@ -9,31 +9,45 @@
 
     <Button
         android:id="@+id/Salvar"
-        android:layout_width="98dp"
-        android:layout_height="55dp"
+        android:layout_width="100dp"
+        android:layout_height="53dp"
         android:onClick="Salvar"
         android:text="Salvar"
         android:textSize="10sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.162"
+        app:layout_constraintHorizontal_bias="0.163"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.615" />
+        app:layout_constraintVertical_bias="0.625" />
 
     <Button
         android:id="@+id/Deletar"
-        android:layout_width="98dp"
-        android:layout_height="55dp"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
         android:onClick="Deletar"
-        android:text="Deletar: "
+        android:text="Deletar:"
         android:textSize="10sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.699"
+        app:layout_constraintHorizontal_bias="0.75"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.615" />
+        app:layout_constraintVertical_bias="0.602" />
+
+    <Button
+        android:id="@+id/Editar"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:onClick="Editar"
+        android:text="Editar:"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.752"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.694" />
 
     <TextView
         android:id="@+id/PML"
@@ -66,10 +80,10 @@
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.471"
+        app:layout_constraintHorizontal_bias="0.181"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.687" />
+        app:layout_constraintVertical_bias="0.711" />
 
     <TextView
         android:id="@+id/DefesaL"
@@ -186,9 +200,9 @@
 
     <EditText
         android:id="@+id/ID"
-        android:layout_width="56dp"
-        android:layout_height="52dp"
-        android:layout_marginTop="416dp"
+        android:layout_width="40dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="440dp"
         android:layout_marginEnd="24dp"
         android:ems="10"
         android:hint="ID"
@@ -239,8 +253,8 @@
 
     <TextView
         android:id="@+id/mostraGrupo"
-        android:layout_width="383dp"
-        android:layout_height="195dp"
+        android:layout_width="386dp"
+        android:layout_height="186dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

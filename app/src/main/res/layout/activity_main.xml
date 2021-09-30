@@ -4,4 +4,247 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"/>
+    android:textAlignment="center"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/Salvar"
+        android:layout_width="98dp"
+        android:layout_height="55dp"
+        android:onClick="Salvar"
+        android:text="Salvar"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.162"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.615" />
+
+    <Button
+        android:id="@+id/Deletar"
+        android:layout_width="98dp"
+        android:layout_height="55dp"
+        android:onClick="Deletar"
+        android:text="Deletar: "
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.699"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.615" />
+
+    <TextView
+        android:id="@+id/PML"
+        android:layout_width="31dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="12dp"
+        android:text="PM"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toStartOf="@+id/PM"
+        app:layout_constraintTop_toBottomOf="@+id/DefesaL" />
+
+    <TextView
+        android:id="@+id/PVL"
+        android:layout_width="36dp"
+        android:layout_height="22dp"
+        android:layout_marginTop="60dp"
+        android:text="PV"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toStartOf="@+id/PV"
+        app:layout_constraintHorizontal_bias="0.761"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/NivelL" />
+
+    <TextView
+        android:id="@+id/GrupoL"
+        android:layout_width="80dp"
+        android:layout_height="30dp"
+        android:text="Grupo"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.471"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.687" />
+
+    <TextView
+        android:id="@+id/DefesaL"
+        android:layout_width="31dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="264dp"
+        android:layout_marginEnd="12dp"
+        android:text="DEF"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toStartOf="@+id/Defesa"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/NomeL"
+        android:layout_width="57dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="24dp"
+        android:text="Nome"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toStartOf="@+id/Nome"
+        app:layout_constraintHorizontal_bias="0.83"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/RacaL"
+        android:layout_width="59dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="8dp"
+        android:text="Raça"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toStartOf="@+id/Raca"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ClasseL" />
+
+    <TextView
+        android:id="@+id/NivelL"
+        android:layout_width="43dp"
+        android:layout_height="26dp"
+        android:layout_marginTop="260dp"
+        android:text="Nível"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toStartOf="@+id/Nivel"
+        app:layout_constraintHorizontal_bias="0.687"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/ClasseL"
+        android:layout_width="56dp"
+        android:layout_height="27dp"
+        android:layout_marginTop="52dp"
+        android:text="Classe"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toStartOf="@+id/Classe"
+        app:layout_constraintHorizontal_bias="0.82"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/NomeL" />
+
+    <EditText
+        android:id="@+id/Nome"
+        android:layout_width="285dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="20dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:selectAllOnFocus="false"
+        android:singleLine="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/Classe"
+        android:layout_width="285dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="20dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:selectAllOnFocus="false"
+        android:singleLine="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Nome"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <EditText
+        android:id="@+id/Raca"
+        android:layout_width="285dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:selectAllOnFocus="false"
+        android:singleLine="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Classe" />
+
+    <EditText
+        android:id="@+id/Defesa"
+        android:layout_width="108dp"
+        android:layout_height="59dp"
+        android:layout_marginTop="244dp"
+        android:layout_marginEnd="24dp"
+        android:ems="10"
+        android:inputType="number"
+        android:selectAllOnFocus="false"
+        android:singleLine="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/ID"
+        android:layout_width="56dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="416dp"
+        android:layout_marginEnd="24dp"
+        android:ems="10"
+        android:hint="ID"
+        android:inputType="number"
+        android:selectAllOnFocus="false"
+        android:singleLine="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/Nivel"
+        android:layout_width="113dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="244dp"
+        android:layout_marginEnd="16dp"
+        android:ems="10"
+        android:inputType="number"
+        android:selectAllOnFocus="false"
+        android:singleLine="false"
+        app:layout_constraintEnd_toStartOf="@+id/DefesaL"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/PV"
+        android:layout_width="116dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:ems="10"
+        android:inputType="number|textPersonName"
+        android:selectAllOnFocus="false"
+        android:singleLine="false"
+        app:layout_constraintEnd_toStartOf="@+id/PML"
+        app:layout_constraintTop_toBottomOf="@+id/Nivel" />
+
+    <EditText
+        android:id="@+id/PM"
+        android:layout_width="109dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="24dp"
+        android:ems="10"
+        android:inputType="number|textPersonName"
+        android:selectAllOnFocus="false"
+        android:singleLine="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Defesa" />
+
+    <TextView
+        android:id="@+id/mostraGrupo"
+        android:layout_width="383dp"
+        android:layout_height="195dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.97" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

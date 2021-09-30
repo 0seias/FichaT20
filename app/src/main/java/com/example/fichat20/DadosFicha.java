@@ -7,57 +7,53 @@ public class DadosFicha {
     String classe;
     String raca;
     String nivel;
-    String forca;
-    String destreza;
-    String constituicao;
-    String carisma;
-    String inteligencia;
-    String sabedoria;
     String defesa;
-    String ataque;
-    String historia;
+    String PV;
+    String PM;
 
 
     public DadosFicha()
     {
     }
 
-    public DadosFicha(String nome, String classe, String raca, String nivel, String forca, String destreza, String constituicao, String carisma, String inteligencia, String sabedoria, String defesa, String ataque, String historia)
+    public DadosFicha(String nome, String classe, String raca, String nivel, String defesa, String PV, String PM)
     {
         this.nome = nome;
         this.classe = classe;
         this.raca = raca;
         this.nivel = nivel;
-        this.forca = forca;
-        this.destreza = destreza;
-        this.constituicao = constituicao;
-        this.carisma = carisma;
-        this.inteligencia = inteligencia;
-        this.sabedoria = sabedoria;
         this.defesa = defesa;
-        this.ataque = ataque;
-        this.historia = historia;
+        this.PV = PV;
+        this.PM = PM;
 
     }
 
-    public DadosFicha(int id, String nome, String classe, String raca, String nivel, String forca, String destreza, String constituicao, String carisma, String inteligencia, String sabedoria, String defesa, String ataque, String historia)
+    public DadosFicha(int id, String nome, String classe, String raca, String nivel, String defesa, String PV, String PM)
     {
         this.id = id;
         this.nome = nome;
         this.classe = classe;
         this.raca = raca;
         this.nivel = nivel;
-        this.forca = forca;
-        this.destreza = destreza;
-        this.constituicao = constituicao;
-        this.carisma = carisma;
-        this.inteligencia = inteligencia;
-        this.sabedoria = sabedoria;
         this.defesa = defesa;
-        this.ataque = ataque;
-        this.historia = historia;
+        this.PV = PV;
+        this.PM = PM;
 
     }
+
+    public DadosFicha(int id)
+    {
+        this.id = id;
+        this.nome = "";
+        this.classe = "";
+        this.raca = "";
+        this.nivel = "";
+        this.defesa = "";
+        this.PV = "";
+        this.PM = "";
+
+    }
+
     public int getId()
     {
         return id;
@@ -66,6 +62,7 @@ public class DadosFicha {
     {
         this.id = id;
     }
+
     public String getNome()
     {
         return nome;
@@ -74,6 +71,7 @@ public class DadosFicha {
     {
         this.nome = nome;
     }
+
     public String getClasse()
     {
         return classe;
@@ -86,7 +84,6 @@ public class DadosFicha {
     public String getRaca() {
         return raca;
     }
-
     public void setRaca(String raca) {
         this.raca = raca;
     }
@@ -94,80 +91,23 @@ public class DadosFicha {
     public String getNivel() {
         return nivel;
     }
-
     public void setNivel(String nivel) {
         this.nivel = nivel;
-    }
-
-    public String getForca() {
-        return forca;
-    }
-
-    public void setForca(String forca) {
-        this.forca = forca;
-    }
-
-    public String getDestreza() {
-        return destreza;
-    }
-
-    public void setDestreza(String destreza) {
-        this.destreza = destreza;
-    }
-
-    public String getConstituicao() {
-        return constituicao;
-    }
-
-    public void setConstituicao(String constituicao) {
-        this.constituicao = constituicao;
-    }
-
-    public String getCarisma() {
-        return carisma;
-    }
-
-    public void setCarisma(String carisma) {
-        this.carisma = carisma;
-    }
-
-    public String getInteligencia() {
-        return inteligencia;
-    }
-
-    public void setInteligencia(String inteligencia) {
-        this.inteligencia = inteligencia;
-    }
-
-    public String getSabedoria() {
-        return sabedoria;
-    }
-
-    public void setSabedoria(String sabedoria) {
-        this.sabedoria = sabedoria;
     }
 
     public String getDefesa() {
         return defesa;
     }
-
     public void setDefesa(String defesa) {
         this.defesa = defesa;
     }
 
-    public String getAtaque() {
-        return ataque;
+    public String getPV() { return PV; }
+    public void setPV(String PV) { this.PV = PV; }
+
+    public String getPM() { return PM; }
+    public void setPM(String PM) {
+        this.PM = PM;
     }
 
-    public void setAtaque(String ataque) {
-        this.ataque = ataque;
-    }
-
-    public String getHistoria() {
-        return historia;
-    }
-
-    public void setHistoria(String historia) {
-        this.historia = historia;
-    }
 }

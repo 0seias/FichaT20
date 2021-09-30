@@ -19,16 +19,9 @@ public class BancoDeDados extends SQLiteOpenHelper
     private static final String CAMPO_CLASSE = "classe";
     private static final String CAMPO_RACA = "raca";
     private static final String CAMPO_NIVEL = "nivel";
-    private static final String CAMPO_FORCA = "forca";
-    private static final String CAMPO_DESTREZA = "destreza";
-    private static final String CAMPO_CONSTITUICAO = "constituicao";
-    private static final String CAMPO_CARISMA = "carisma";
-    private static final String CAMPO_INTELIGENCIA = "inteligencia";
-    private static final String CAMPO_SABEDORIA = "sabedoria";
     private static final String CAMPO_DEFESA = "defesa";
-    private static final String CAMPO_ATAQUE = "ataque";
-    private static final String CAMPO_HISTORIA = "historia";
-
+    private static final String CAMPO_PV = "PV";
+    private static final String CAMPO_PM = "PM";
 
     public BancoDeDados(Context context)
     {
@@ -42,15 +35,9 @@ public class BancoDeDados extends SQLiteOpenHelper
                 + CAMPO_CLASSE + " TEXT,"
                 + CAMPO_RACA + " TEXT,"
                 + CAMPO_NIVEL + " NUMBER,"
-                + CAMPO_FORCA + " INTEGER,"
-                + CAMPO_DESTREZA + " INTEGER,"
-                + CAMPO_CONSTITUICAO + " INTEGER,"
-                + CAMPO_CARISMA  + " INTEGER,"
-                + CAMPO_INTELIGENCIA + " INTEGER,"
-                + CAMPO_SABEDORIA + " INTEGER,"
                 + CAMPO_DEFESA + " INTEGER,"
-                + CAMPO_ATAQUE + " INTEGER,"
-                + CAMPO_HISTORIA+ " TEXT" + ")";
+                + CAMPO_PV + " INTEGER,"
+                + CAMPO_PM+ " INTEGER" + ")";
         banco.execSQL(CriaTabelaContatos);
     }
     @Override
@@ -75,16 +62,9 @@ public class BancoDeDados extends SQLiteOpenHelper
         values.put(CAMPO_CLASSE, dadosFicha.getClasse());
         values.put(CAMPO_RACA, dadosFicha.getRaca());
         values.put(CAMPO_NIVEL, dadosFicha.getNivel());
-        values.put(CAMPO_FORCA, dadosFicha.getForca());
-        values.put(CAMPO_DESTREZA, dadosFicha.getDestreza());
-        values.put(CAMPO_CONSTITUICAO, dadosFicha.getConstituicao());
-        values.put(CAMPO_CARISMA, dadosFicha.getCarisma());
-        values.put(CAMPO_INTELIGENCIA, dadosFicha.getInteligencia());
-        values.put(CAMPO_SABEDORIA, dadosFicha.getSabedoria());
         values.put(CAMPO_DEFESA, dadosFicha.getDefesa());
-        values.put(CAMPO_ATAQUE, dadosFicha.getAtaque());
-        values.put(CAMPO_HISTORIA, dadosFicha.getHistoria());
-
+        values.put(CAMPO_PV, dadosFicha.getPV());
+        values.put(CAMPO_PM, dadosFicha.getPM());
         banco.insert(TABELA_FICHAS, null, values);
         banco.close();
     }
@@ -92,8 +72,7 @@ public class BancoDeDados extends SQLiteOpenHelper
     {
         SQLiteDatabase banco= this.getReadableDatabase();
         Cursor cursor = banco.query(TABELA_FICHAS, new String[] {CAMPO_ID, CAMPO_NOME,
-                        CAMPO_CLASSE, CAMPO_RACA, CAMPO_NIVEL, CAMPO_FORCA, CAMPO_DESTREZA, CAMPO_CONSTITUICAO, CAMPO_CARISMA,
-                        CAMPO_INTELIGENCIA, CAMPO_SABEDORIA, CAMPO_DEFESA, CAMPO_ATAQUE, CAMPO_HISTORIA},
+                        CAMPO_CLASSE, CAMPO_RACA, CAMPO_NIVEL, CAMPO_DEFESA, CAMPO_PV,  CAMPO_PM},
                 CAMPO_ID + "=?", new String[] {String.valueOf(id)}, null, null, null, null);
         if (cursor != null)
         {
@@ -102,7 +81,12 @@ public class BancoDeDados extends SQLiteOpenHelper
 
         DadosFicha dadosFicha = new DadosFicha(Integer.parseInt(cursor.getString(0)),
                 cursor.getString( 1),
-                cursor.getString(2));
+                cursor.getString( 2),
+                cursor.getString( 3),
+                cursor.getString( 4),
+                cursor.getString( 5),
+                cursor.getString( 6),
+                cursor.getString( 7));
 
         return dadosFicha;
     }
@@ -125,22 +109,16 @@ public class BancoDeDados extends SQLiteOpenHelper
                 dadosFicha.setClasse(cursor.getString(2));
                 dadosFicha.setRaca(cursor.getString(3));
                 dadosFicha.setNivel(cursor.getString(4));
-                dadosFicha.setForca(cursor.getString(5));
-                dadosFicha.setDestreza(cursor.getString(6));
-                dadosFicha.setConstituicao(cursor.getString(7));
-                dadosFicha.setCarisma(cursor.getString(8));
-                dadosFicha.setInteligencia(cursor.getString(9));
-                dadosFicha.setSabedoria(cursor.getString(10));
-                dadosFicha.setDefesa(cursor.getString(11));
-                dadosFicha.setAtaque(cursor.getString(12));
-                dadosFicha.setHistoria(cursor.getString(13));
+                dadosFicha.setDefesa(cursor.getString(5));
+                dadosFicha.setPV(cursor.getString(6));
+                dadosFicha.setPM(cursor.getString(7));
                 listaDadosFicha.add(dadosFicha);
             }
             while (cursor.moveToNext());
         }
         return listaDadosFicha;
     }
-    public int atualizaContatos (DadosFicha dadosFicha)
+    public int atualizaDadosFicha (DadosFicha dadosFicha)
     {
         SQLiteDatabase banco = this.getWritableDatabase();
         ContentValues values = new ContentValues();
@@ -148,27 +126,22 @@ public class BancoDeDados extends SQLiteOpenHelper
         values.put(CAMPO_CLASSE, dadosFicha.getClasse());
         values.put(CAMPO_RACA, dadosFicha.getRaca());
         values.put(CAMPO_NIVEL, dadosFicha.getNivel());
-        values.put(CAMPO_FORCA, dadosFicha.getForca());
-        values.put(CAMPO_DESTREZA, dadosFicha.getDestreza());
-        values.put(CAMPO_CONSTITUICAO, dadosFicha.getConstituicao());
-        values.put(CAMPO_CARISMA, dadosFicha.getCarisma());
-        values.put(CAMPO_INTELIGENCIA, dadosFicha.getInteligencia());
-        values.put(CAMPO_SABEDORIA, dadosFicha.getSabedoria());
         values.put(CAMPO_DEFESA, dadosFicha.getDefesa());
-        values.put(CAMPO_ATAQUE, dadosFicha.getAtaque());
-        values.put(CAMPO_HISTORIA, dadosFicha.getHistoria());
+        values.put(CAMPO_PV, dadosFicha.getPV());
+        values.put(CAMPO_PM, dadosFicha.getPM());
         return banco.update(TABELA_FICHAS, values, CAMPO_ID + "=?", new String[]
                 {String.valueOf(dadosFicha.getId())});
     }
-    public void deletaContatos(DadosFicha dadosFicha)
+    public void deletaDadosFicha(DadosFicha dadosFicha)
     {
 
         SQLiteDatabase banco = this.getWritableDatabase();
         banco.delete(TABELA_FICHAS, CAMPO_ID + "=?", new String[]
                 {String.valueOf(dadosFicha.getId())});
+
         banco.close();
     }
-    public int consultaQuantidadeContatos()
+    public int consultaQuantidadeFichas()
     {
         String countQuery = "SELECT * FROM " + TABELA_FICHAS;
         SQLiteDatabase banco = this.getReadableDatabase();

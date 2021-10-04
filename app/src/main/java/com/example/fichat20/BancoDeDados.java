@@ -40,12 +40,6 @@ public class BancoDeDados extends SQLiteOpenHelper
                 + CAMPO_PM+ " INTEGER" + ")";
         banco.execSQL(CriaTabelaContatos);
     }
-    @Override
-    public void onUpgrade(SQLiteDatabase banco, int i, int i1)
-    {
-        banco.execSQL("DROP TABLE IF EXISTS " + TABELA_FICHAS);
-        onCreate(banco);
-    }
 
     public void deletar(SQLiteDatabase banco)
     {

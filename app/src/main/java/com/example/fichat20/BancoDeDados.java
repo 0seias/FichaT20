@@ -41,13 +41,6 @@ public class BancoDeDados extends SQLiteOpenHelper
         banco.execSQL(CriaTabelaContatos);
     }
 
-    public void deletar(SQLiteDatabase banco)
-    {
-
-        banco.execSQL("DROP TABLE IF EXISTS " + TABELA_FICHAS);
-    }
-
-
     public void insereDadosFichas(DadosFicha dadosFicha)
     {
         SQLiteDatabase banco = this.getWritableDatabase();

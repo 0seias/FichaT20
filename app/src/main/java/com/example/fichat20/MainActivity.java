@@ -11,7 +11,7 @@ import android.widget.TextView;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-    Button Salvar, Deletar, Refresh, Preencher;
+    Button Salvar, Deletar, Editar, Refresh, Preencher;
     TextView mostraGrupo, NomeL, ClasseL, RacaL, NivelL, DefesaL, PML, PVL, GrupoL;
     EditText Nome, Classe, Raca, Nivel, Defesa, PM, PV, ID;
     String text = "", text2 = "", nome1, classe1, raca1, nivel1, defesa1, pv1, pm1, id1;
